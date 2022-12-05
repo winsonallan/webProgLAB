@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\ManageController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +31,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'home'] );
+Route::get('/category', [CategoryController::class, 'category'] );
+Route::get('/detail', [ProductController::class, 'pDetails'] );
+Route::get('/search', [SearchController::class, 'search'] );
+Route::get('/manage', [ManageController::class, 'manage'] );
+Route::get('/manage/add', [ManageController::class, 'add'] );
+Route::get('/manage/update', [ManageController::class, 'update'] );
+Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/cart', [CartController::class, 'cart']);
+Route::get('/history', [HistoryController::class, 'history']);
