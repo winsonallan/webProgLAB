@@ -25,13 +25,13 @@ use Illuminate\Support\Facades\Route;
 // Testing another commit
 
 
-Route::get('/', function () {
-    return view('auth/login');
-});
+// Route::get('/', function () {
+//     return view('auth/login');
+// });
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'home'] );
+Route::get('/', [HomeController::class, 'home'] );
 Route::get('/category', [CategoryController::class, 'category'] );
 Route::get('/detail', [ProductController::class, 'pDetails'] );
 Route::get('/search', [SearchController::class, 'search'] );
