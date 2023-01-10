@@ -6,10 +6,14 @@
         <div class="">
             <div class="card-body shadow" style="background-color: white; padding: 5px; display:flex; flex-direction: row; align-items:center">
                 <div style="text-align:center;">
-                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="">
+                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="width: 200px; height:200px">
                 </div>
                 <div style="margin-left: 5px">
-                    <div style="font-size: 24px"><h1><b>Product Name</h1></b></div>
+                    <div style="font-size: 24px">
+                        <h1>
+                            <b>Product Name</b>
+                        </h1>
+                    </div>
                     <div style="display: flex; flex-direction:row">
                         <div style="width:100px; color:darkgray">Detail</div>
                         <div style="">This is the details</div>
