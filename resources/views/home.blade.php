@@ -26,6 +26,7 @@
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%;">
+            {{-- Loop from here --}}
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
                     <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
@@ -33,7 +34,7 @@
                     <p class="text-truncate"><b>IDR [Price goes here]</b></p>
                 </div>
             </div>
-
+            {{-- To here --}}
         </div>
     </div>
 
