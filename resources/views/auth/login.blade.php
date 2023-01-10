@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:10%">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-header" style="text-align: center;"><b>Login</b></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <div class="row mb-1">
+                            <label for="email" class="col-form-label text-md-start">{{ __('Email Address') }}</label>
+                        </div>
+                        <div class="row mb-3" style="width: auto">
+                            <div class="col-md-6 text-md-start">
+                                <input id="email" style="width:485px" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -25,11 +26,12 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
+                        <div class="row mb-1">
+                            <label for="password" class="col-form-label text-md-start">{{ __('Password') }}</label>
+                        </div>
+                        <div>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" style="width:485px" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Your Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -39,8 +41,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="row mb-3 mt-3">
+                            <div class="">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -52,20 +54,21 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="" style="text-align: center;">
+                                <button type="submit" style="padding-left: 30px; padding-right:30px" class="btn btn-outline-secondary">
                                     {{ __('Login') }}
                                 </button>
+                            </div>
+                        </div>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                        <div class="row mb-0 mt-3">
+                            <div class="">
+                                Dont have an account? <a href="{{url('/register')}}">Register Now</a>
                             </div>
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </div>

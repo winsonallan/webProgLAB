@@ -18,6 +18,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+
 <body style="background-color:#F0F0F0">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -32,7 +33,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Category</a>
+                            <div class="dropdown-menu">
+                                <a href="" class="dropdown-item">Beauty</a>
+                                <a href="" class="dropdown-item">Electronics</a>
+                                <a href="" class="dropdown-item">Books</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{url('manage')}}" class="nav-link">Manage Products</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
