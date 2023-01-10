@@ -295,7 +295,7 @@
 
 <footer style="position: fixed; bottom:0; width:100%; margin:0px; padding:0%;">
     <div style="width:100%; background-color: white; display:flex; flex-direction:row; justify-content:center; shadow">
-        <p style="padding:0.5%; font-size:20px; margin-right:40px; margin-top:5px; margin-bottom:5px">Total Price: IDR 8000000</p>
+        <p style="padding:0.5%; font-size:20px; margin-right:40px; margin-top:5px; margin-bottom:5px">Total Price: IDR The price goes here</p>
         <button type="button" class="btn btn-outline-success" style=" margin:0.5%; vertical-align:middle; font-size: 16px; height:40px">
             Purchase
         </button>
