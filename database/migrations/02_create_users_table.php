@@ -14,13 +14,21 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->bigInteger('userType_id')->unsigned();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('gender');
+            $table->date('d.o.b');
+            $table->string('country');
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::table('users', function(Blueprint $table){
+            $table->foreign('userType_id')->references('id')->on('user_types')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
