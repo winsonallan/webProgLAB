@@ -16,7 +16,7 @@
                         </div>
                         <div class="row mb-3" style="width: auto">
                             <div class="col-md-6 text-md-start" style="display: flex; width: 100%">
-                                <input id="email" style="" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
+                                <input id="email" style="background-color:white" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                         </div>
                         <div>
                             <div class="col-md-6" style="display: flex; width: 100%">
-                                <input id="password" style="" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Your Password">
+                                <input id="password" style="background-color:white" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Your Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

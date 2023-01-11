@@ -7,7 +7,7 @@
         <div class="input-group mb-3" style="width: 30%">
             <input type="text" class="form-control" placeholder="Product Name">
             <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">
+                <button class="btn btn-secondary" type="button" style="border-radius: 0 4px 4px 0">
                     <img src="{{asset('whitesearch.png') }}" alt="" srcset="" style="width: 16px">
                 </button>
             </div>
