@@ -9,23 +9,29 @@
                     <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="width: 200px; height:200px">
                 </div>
                 <div style="margin-left: 5px; margin-top:5px; padding:0">
-                    <div style="font-size: 20px">
+                    <div style="font-size: 20px; font-family: Arial, Helvetica, sans-serif">
                         <b>Product Name</b>
                     </div>
-                    <div style="display: flex; flex-direction:row; font-size: 12px">
-                        <div style="width:100px; color:darkgray;">Detail</div>
-                        <div style="overflow-wrap: wrap;">This is the details </div>
+
+                    <div>
+                        <table style="display: flex; font-family: Arial, Helvetica, sans-serif; font-size:12px">
+                            <tr>
+                                <th style="width: 100px; color:gray; vertical-align: top">Detail</th>
+                                <td style="">This is the details This is the details This is the details This is the details This is the details  This is the details This is the details This is the details This is the details </td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px; color:gray; vertical-align: top">Price</th>
+                                <td>This is the price</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
+                                <td style="">
+                                    <input style="width:30vw; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                    <div style="display: flex; flex-direction:row; font-size: 12px">
-                        <div style="width:100px; color:darkgray">Price</div>
-                        <div style="overflow-wrap: wrap; ">This is the details </div>
-                    </div>
-                    <div style="display: flex; flex-direction:row; font-size: 12px">
-                        <div style="width:100px; color:darkgray">Qty</div>
-                        <div>
-                            <input style="width:300px; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
-                        </div>
-                    </div>
+
                     <button type="button" class="btn btn-outline-secondary" style="margin-top: 20px; font-size: 12px; width:72px; height:34px">Purchase</button>
                 </div>
             </div>
