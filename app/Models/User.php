@@ -15,7 +15,7 @@ class User extends Authenticatable
     protected $primarykey = 'id';
 
     public function user_types(){
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(UserType::class, 'id');
     }
 
     public function shop_carts(){

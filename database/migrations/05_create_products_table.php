@@ -17,9 +17,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->unsigned();
             $table->longText('detail');
-            $table->int('price');
+            $table->integer('price');
             $table->string('image');
-            $table->int('quantity');
+            $table->integer('quantity');
             $table->timestamps();
         });
 

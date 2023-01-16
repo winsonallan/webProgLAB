@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UserTypeSeeder extends Seeder
 {
@@ -15,5 +16,16 @@ class UserTypeSeeder extends Seeder
     public function run()
     {
         //
+        $posts =
+        [
+            [
+                "name" => "Admin",
+            ],
+            [
+                "name" => "User",
+            ]
+        ];
+
+        \DB::table('user_types') -> insert($posts);
     }
 }

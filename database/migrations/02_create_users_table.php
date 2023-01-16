@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
-            $table->date('d.o.b');
+            $table->date('DoB');
             $table->string('country');
             $table->rememberToken();
             $table->timestamps();
