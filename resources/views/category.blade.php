@@ -13,11 +13,13 @@
             {{-- Loop from here --}}
             @foreach ($products as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 18%; max-width:15%; margin-left:8px; margin-right:8px">
+                <a href="/detail/{{$product->id}}" style="color: black; text-decoration: none;">
                 <div class="text-truncate" style="">
                     <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
                     <p class="text-truncate">{{$product->name}}</p>
                     <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
+                </a>
             </div>
             @endforeach
 

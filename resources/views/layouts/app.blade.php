@@ -79,6 +79,7 @@
                                     </form>
 
                                     <a class="dropdown-item" href="/profile">My Profile</a>
+                                    <a class="dropdown-item" href="/history">History</a>
                                 </div>
                             </li>
                         @endguest

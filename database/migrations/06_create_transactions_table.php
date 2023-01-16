@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('order_id')->unsigned();
             $table->bigInteger('product_id')->unsigned();
             $table->integer('quantity');
@@ -23,6 +24,11 @@ return new class extends Migration
 
         Schema::table('transactions', function(Blueprint $table){
             $table->foreign('order_id')->references('id')->on('shop_carts')
+                ->onDelete('cascade')->onUpdate('cascade');
+        });
+
+        Schema::table('transactions', function(Blueprint $table){
+            $table->foreign('user_id')->references('user_id')->on('shop_carts')
                 ->onDelete('cascade')->onUpdate('cascade');
         });
 
