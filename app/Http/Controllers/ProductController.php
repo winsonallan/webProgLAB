@@ -13,9 +13,15 @@ use App\Models\UserType;
 class ProductController extends Controller
 {
     //
-    public function pDetails()
+    public function pDetails($id)
     {
-        return view('productDetail');
+        $products = Product::where('id', $id)
+                    ->take(1)
+                    ->get();
+
+        return view('productDetail')->with([
+            'products' => $products
+        ]);
     }
 }
 

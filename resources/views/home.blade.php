@@ -27,11 +27,13 @@
             {{-- Loop from here --}}
             @foreach ($beautyProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
+                <a href="/detail/{{$product->id}}" style="color: black; text-decoration: none;">
                 <div class="text-truncate" style="">
                     <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
                     <p class="text-truncate">{{$product->name}}</p>
                     <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
+                </a>
             </div>
             @endforeach
             {{-- To here --}}
@@ -51,11 +53,13 @@
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%">
             @foreach ($electronicProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
+                <a href="/detail/{{$product->id}}" style="color: black; text-decoration: none;">
                 <div class="text-truncate" style="">
                     <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
                     <p class="text-truncate">{{$product->name}}</p>
                     <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
+                </a>
             </div>
             @endforeach
         </div>
@@ -75,9 +79,11 @@
             @foreach ($bookProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
+                    <a href="/detail/{{$product->id}}" style="color: black; text-decoration: none;">
                     <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
                     <p class="text-truncate">{{$product->name}}</p>
                     <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
+                    </a>
                 </div>
             </div>
             @endforeach
