@@ -33,7 +33,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'home'] );
 Route::get('/home', [HomeController::class, 'home'] );
-Route::get('/category', [CategoryController::class, 'category'] );
+Route::get('/category/{id}', [CategoryController::class, 'category'] );
 Route::get('/detail', [ProductController::class, 'pDetails'] );
 Route::get('/search', [SearchController::class, 'search'] );
 Route::get('/manage', [ManageController::class, 'manage'] );

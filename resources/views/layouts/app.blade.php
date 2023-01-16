@@ -36,9 +36,9 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Category</a>
                             <div class="dropdown-menu">
-                                <a href="" class="dropdown-item">Beauty</a>
-                                <a href="" class="dropdown-item">Electronics</a>
-                                <a href="" class="dropdown-item">Books</a>
+                                <a href="/category/1" class="dropdown-item">Beauty</a>
+                                <a href="/category/2" class="dropdown-item">Electronics</a>
+                                <a href="/category/3" class="dropdown-item">Books</a>
                             </div>
                         </li>
                         <li>

@@ -20,7 +20,7 @@
                 Beauty
             </div>
             <div style="margin-left: 10px; color:steelblue">
-                <a href="" style="text-decoration: none">View All</a>
+                <a href="/category/1" style="text-decoration: none">View All</a>
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%;">
@@ -45,7 +45,7 @@
                 Electronics
             </div>
             <div style="margin-left: 10px; color:steelblue">
-                <a href="" style="text-decoration: none">View All</a>
+                <a href="/category/2" style="text-decoration: none">View All</a>
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%">
@@ -68,7 +68,7 @@
                 Books
             </div>
             <div style="margin-left: 10px; color:steelblue">
-                <a href="" style="text-decoration: none">View All</a>
+                <a href="/category/3" style="text-decoration: none">View All</a>
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%">
