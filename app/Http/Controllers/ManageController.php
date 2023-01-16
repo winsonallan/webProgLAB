@@ -15,7 +15,9 @@ class ManageController extends Controller
     //
     public function manage()
     {
-        return view('manage');
+        return view('manage')->with([
+            'products' => Product::all(),
+        ]);
     }
 
     public function add()

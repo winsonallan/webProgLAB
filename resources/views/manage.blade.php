@@ -22,13 +22,14 @@
     </div>
 
     <div style="margin-bottom: 15px">
-        <div class="card-body" style="background-color: white; padding: 5px; border-radius:10px; display:flex; flex-direction: row;">
+        @foreach ($products as $product)
+        <div class="card-body" style="background-color: white; padding: 5px; border-radius:10px; display:flex; flex-direction: row; margin-bottom:15px">
             <div style="text-align:center;">
-                <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="width: 200px; height:200px">
+                <img src="{{asset($product->image) }}" alt="" srcset="" style="width: 200px; height:200px">
             </div>
             <div style="margin-left: 5px; margin-right: 20px">
                 <div style="margin-top:15px; width: auto; font-size:24px" class="">
-                    <b>Product name is here and Product name is here and Product name is here and </b>
+                    <b>{{$product->name}}</b>
                 </div>
             </div>
             <div style="margin-left:auto; margin-right:10px; display:flex; flex-direction:row">
@@ -40,6 +41,7 @@
                 </a>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection
