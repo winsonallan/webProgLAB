@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label">Name</label>
 
                             <div class="">
-                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="Data goes here">
+                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="{{$user->name}}">
                             </div>
                         </div>
 
@@ -23,7 +23,7 @@
                             <label for="email" class="col-md-4 col-form-label">Email</label>
 
                             <div class="">
-                                <input id="email" type="email" class="form-control" name="email" readonly="readonly" value="Data goes here">
+                                <input id="email" type="email" class="form-control" name="email" readonly="readonly" value="{{$user->email}}">
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
                             <label for="name" class="col-md-4 col-form-label">Gender</label>
 
                             <div class="">
-                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="Data goes here">
+                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="{{$user->gender}}">
                             </div>
                         </div>
 
@@ -39,7 +39,7 @@
                             <label for="name" class="col-md-4 col-form-label">Date of Birth</label>
 
                             <div class="">
-                                <input id="name" type="text" class="form-control" name="name"readonly="readonly" value="Data goes here">
+                                <input id="name" type="text" class="form-control" name="name"readonly="readonly" value="{{$user->DoB}}">
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                             <label for="name" class="col-md-4 col-form-label">Country</label>
 
                             <div class="">
-                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="Data goes here">
+                                <input id="name" type="text" class="form-control" name="name" readonly="readonly" value="{{$user->country}}">
                             </div>
                         </div>
                     </form>
