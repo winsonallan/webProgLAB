@@ -14,6 +14,33 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $posts =
+        [
+            [
+                "name" => "DanDan Brush",
+                "category_id" => "1",
+                "detail" => "lorem ipsum",
+                "price" => "5000",
+                "image" => "/sampleImage.jpg",
+                // "quantity" => "100"
+            ],
+            [
+                "name" => "Samsung Charger",
+                "category_id" => "2",
+                "detail" => "lorem ipsum",
+                "price" => "105000",
+                "image" => "/sampleImage.jpg",
+                // "quantity" => "100"
+            ],
+            [
+                "name" => "Heri Poter",
+                "category_id" => "3",
+                "detail" => "lorem ipsum",
+                "price" => "51000",
+                "image" => "/sampleImage.jpg",
+                // "quantity" => "100"
+            ],
+        ];
+        \DB::table('products') -> insert($posts);
     }
 }

@@ -28,6 +28,15 @@ class UserSeeder extends Seeder
                 "DoB" => Carbon::create('2000', '01', '01'),
                 "country" => "Indonesia"
             ],
+            [
+                "userType_id" => "2",
+                "name" => "son",
+                "email" => "son@google.com",
+                "password" => Hash::make('son12345'),
+                "gender" => "Male",
+                "DoB" => Carbon::create('2000', '01', '01'),
+                "country" => "Indonesia"
+            ],
         ];
 
         \DB::table('users') -> insert($posts);

@@ -15,5 +15,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         //
+        $posts =
+        [
+            [
+                "name" => "Beauty"
+            ],
+            [
+                "name" => "Electronics"
+            ],
+            [
+                "name" => "Books"
+            ],
+        ];
+
+        \DB::table('categories') -> insert($posts);
     }
 }
