@@ -21,7 +21,7 @@
                             </tr>
                             <tr>
                                 <th style="width: 100px; color:gray; vertical-align: top">Price</th>
-                                <td>{{$products[0]->price}}</td>
+                                <td>IDR {{$products[0]->price}}</td>
                             </tr>
                             <tr>
                                 <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
