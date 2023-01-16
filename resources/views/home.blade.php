@@ -25,13 +25,15 @@
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%;">
             {{-- Loop from here --}}
+            @foreach ($beautyProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
-                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
-                    <p class="text-truncate">Item NameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeee</p>
-                    <p class="text-truncate"><b>IDR [Price goes here]</b></p>
+                    <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
+                    <p class="text-truncate">{{$product->name}}</p>
+                    <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
             </div>
+            @endforeach
             {{-- To here --}}
         </div>
     </div>
@@ -47,13 +49,15 @@
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%">
+            @foreach ($electronicProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
-                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
-                    <p class="text-truncate">Item NameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeee</p>
-                    <p class="text-truncate"><b>IDR [Price goes here]</b></p>
+                    <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
+                    <p class="text-truncate">{{$product->name}}</p>
+                    <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 
@@ -68,13 +72,15 @@
             </div>
         </div>
         <div class="d-flex flex-row flex-nowrap;" style="overflow-x: scroll; width:100%">
+            @foreach ($bookProducts as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 20%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
-                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
-                    <p class="text-truncate">Item NameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeee</p>
-                    <p class="text-truncate"><b>IDR [Price goes here]</b></p>
+                    <img src="{{asset($product->image) }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
+                    <p class="text-truncate">{{$product->name}}</p>
+                    <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 

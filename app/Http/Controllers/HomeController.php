@@ -29,8 +29,14 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home')->with([
+        $beautyProducts = Product::where('category_id', '1')->get();
+        $electronicProducts = Product::where('category_id', '2')->get();
+        $bookProducts = Product::where('category_id', '3')->get();
 
+        return view('home')->with([
+            'beautyProducts' => $beautyProducts,
+            'electronicProducts' => $electronicProducts,
+            'bookProducts' => $bookProducts,
         ]);
     }
 }
