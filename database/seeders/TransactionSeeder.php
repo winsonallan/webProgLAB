@@ -35,6 +35,20 @@ class TransactionSeeder extends Seeder
                 "product_id" => "3",
                 "quantity" => "3"
             ],
+
+            [
+                "user_id" => "2",
+                "order_id" => "2",
+                "product_id" => "3",
+                "quantity" => "3"
+            ],
+
+            [
+                "user_id" => "2",
+                "order_id" => "2",
+                "product_id" => "1",
+                "quantity" => "2"
+            ],
         ];
         \DB::table('transactions') -> insert($posts);
     }

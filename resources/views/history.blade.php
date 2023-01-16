@@ -15,7 +15,7 @@ As you can see data-bs-targetnya #collapseExample, sm div di bawah button punya 
                 Transaction Date: {{$order->date}} &nbsp;&nbsp;&nbsp;&nbsp;
             </button>
         </div>
-        <div class="collapse justify-content-center " id = "oID{{$order->id}}" style="width: 70%; height:max-content; margin:auto; ">
+        <div class="collapse justify-content-center " id = "oID{{$order->id}}" style="width: 70%; height:max-content; margin:auto; margin-bottom:15px">
             <div class=" justify-content-center">
                 <div class="">
                     <div class="card-body" style="background-color: white; padding: 5px; border-radius:10px; display:flex; flex-direction: row;">
@@ -29,7 +29,7 @@ As you can see data-bs-targetnya #collapseExample, sm div di bawah button punya 
                             {{-- {{$products[0]}} --}}
                             <br>
                             <?php $tQTY = 0 ?>
-                            <?php $tQTY = 0 ?>
+                            <?php $tCost = 0 ?>
                             @for($i = 0; $i<count($products); $i++)
                             <tr>
                                 @if ($transactions[$i]->order_id == $order->id)
