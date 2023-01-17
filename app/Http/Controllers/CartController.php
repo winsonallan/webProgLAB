@@ -16,11 +16,19 @@ class CartController extends Controller
     //
     public function cart($id)
     {
-        $cart=Transaction::where('id', $user_id)->get();
+        $cart=Transaction::where('id', $id)->get();
         $new_Trans = new ShopCart;
-        $new_Trans->user_id = $user_id;
+        $new_Trans->user_id = $id;
         $new_Trans->date = Carbon::now()->toDate();
         $new_Trans->save();
+        foreach ($cart as $items) {
+            $new_transaction_plus = new Transaction();
+            $new_transaction_plus->transactionid = $new_transaction_plus->id;
+            $new_transaction_plus->productid = $items->product->id;
+            $new_transaction_plus->quantity = $items->quantity;
+            $new_transaction_plus->save();
+        }
         return view('cart');
+        return redirect('/home');
     }
 }
