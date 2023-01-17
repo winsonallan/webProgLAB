@@ -39,4 +39,9 @@ class HomeController extends Controller
             'bookProducts' => $bookProducts,
         ]);
     }
+
+    public function register()
+    {
+        return view('auth/register');
+    }
 }

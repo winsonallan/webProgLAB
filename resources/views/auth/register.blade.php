@@ -8,7 +8,7 @@
                 <div class="card-header" style="text-align: center;"><b>Register</b></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/register">
                         @csrf
 
                         <div class="row mb-1">
@@ -68,12 +68,12 @@
                             <label for="gender" class="col-form-label text-md-start">{{ __('Gender') }}</label>
 
                             <div class="row-mb-1">
-                                <input id="male" type="radio"  name="gender" value="Male">
-                                <label for="male">Male</label>
+                                <input class="form-check-input" id="male" type="radio"  name="gender" value="Male">
+                                <label class="form-check-label" for="male">Male</label>
                             </div>
                             <div class="row-mb-1">
-                                <input id="female" type="radio"  name="gender" value="Female">
-                                <label for="female">Female</label>
+                                <input class="form-check-input" id="female" type="radio"  name="gender" value="Female">
+                                <label class="form-check-label" for="female">Female</label>
                             </div>
                         </div>
 

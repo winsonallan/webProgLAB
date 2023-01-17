@@ -27,7 +27,6 @@ class ShopCartSeeder extends Seeder
                 "user_id" => "2",
                 "date" => Carbon::create('2022', '02', '03'),
             ]
-
         ];
 
         \DB::table('shop_carts') -> insert($posts);

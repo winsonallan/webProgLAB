@@ -8,8 +8,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ManageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'home'] );
+// Route::get('/register', [HomeController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'create'])->name('register');
 Route::get('/home', [HomeController::class, 'home'] );
 Route::get('/category/{id}', [CategoryController::class, 'category'] );
 Route::get('/detail/{id}', [ProductController::class, 'pDetails'] );
