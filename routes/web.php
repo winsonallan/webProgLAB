@@ -44,7 +44,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
 // User Only
 Route::middleware(['auth', 'isUser'])->group(function () {
-    Route::get('user/{id}/cart', [CartController::class, 'cart']);
+    Route::get('cart', [CartController::class, 'cart']);
     Route::get('/history', [HistoryController::class, 'history']);
 });
 

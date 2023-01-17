@@ -14,9 +14,10 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     //
-    public function cart($id)
+    public function cart()
     {
-        $my_cart=Transaction::where('id', $id)->get();
+        $id=1;
+        $my_cart=Transaction::where('id')->get();
         $new_Trans = new ShopCart;
         $new_Trans->user_id = $id;
         $new_Trans->date = Carbon::now()->toDate();
@@ -32,6 +33,6 @@ class CartController extends Controller
         }
 
         return view('cart');
-        return redirect('/home');
+        // return redirect('/home');
     }
 }
