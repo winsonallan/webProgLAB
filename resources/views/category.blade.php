@@ -9,7 +9,7 @@
                 {{$categoryName}}
             </div>
         </div>
-        <div class="" style=" width:100%;flex-direction:row; display:flex; flex-wrap: wrap; justify-content: space-between">
+        <div class="" style=" width:100%;flex-direction:row; display:flex; flex-wrap: wrap;">
             {{-- Loop from here --}}
             @foreach ($products as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 18%; max-width:15%; margin-left:8px; margin-right:8px">
