@@ -11,6 +11,14 @@ class Product extends Model
     protected $table = 'products';
     protected $primarykey = 'id';
 
+    protected $fillable = [
+        'name',
+        'category_id',
+        'detail',
+        'price',
+        'image',
+    ];
+
     public function categories(){
         return $this->belongsTo(Category::class, 'category_id');
     }

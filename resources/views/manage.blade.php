@@ -14,10 +14,12 @@
         </div>
 
         <div>
-            <button class="btn btn-secondary" style="width: max-content">
-                Add Product
-                <img src="{{asset('whiteplus.png')}}" alt="" srcset="" style="width: 12px; margin-left:5px">
-            </button>
+            <a href="/manage/add">
+                <button class="btn btn-secondary" style="width: max-content">
+                    Add Product
+                    <img src="{{asset('whiteplus.png')}}" alt="" srcset="" style="width: 12px; margin-left:5px">
+                </button>
+            </a>
         </div>
     </div>
 
@@ -33,7 +35,7 @@
                 </div>
             </div>
             <div style="margin-left:auto; margin-right:10px; display:flex; flex-direction:row">
-                <a href="">
+                <a href="/manage/update/{{$product->id}}">
                     <img src="{{asset('pencil.png') }}" alt="" srcset="" style="width: 40px; height:40px; border: 2px solid  rgb(255, 230, 0); border-radius:10px; padding:8px; margin-top: 15px; margin-right:4px">
                 </a>
                 <a href="">

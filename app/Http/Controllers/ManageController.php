@@ -20,9 +20,24 @@ class ManageController extends Controller
         ]);
     }
 
-    public function add()
+    public function addView()
     {
         return view('add');
+    }
+
+    public function add(Request $request)
+    {
+        $fileName = $request['photo']->getClientOriginalName();
+        $path = $request['photo']->move('images', $fileName);
+        Product::create([
+            'name' => $request['name'],
+            'category_id' => $request['category'],
+            'detail' => $request->input('detail'),
+            'price' => $request ['price'],
+            'image' => "/images"."/".$fileName
+        ]);
+
+        return redirect('/manage/add');
     }
 
     public function update()
