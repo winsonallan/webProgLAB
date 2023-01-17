@@ -23,16 +23,25 @@
                                 <th style="width: 100px; color:gray; vertical-align: top">Price</th>
                                 <td>IDR {{$products[0]->price}}</td>
                             </tr>
-                            <tr>
-                                <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
-                                <td style="">
-                                    <input style="width:30vw; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
-                                </td>
-                            </tr>
+                            @auth
+                                @if (Auth::user()->userType_id == '2')
+                                    <tr>
+                                        <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
+                                        <td style="">
+                                            <input style="width:30vw; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endauth
+
                         </table>
                     </div>
+                    @auth
+                        @if (Auth::user()->userType_id == 2)
+                            <button type="button" class="btn btn-outline-secondary" style="margin-top: 20px; font-size: 12px; width:72px; height:34px">Purchase</button>
+                        @endif
+                    @endauth
 
-                    <button type="button" class="btn btn-outline-secondary" style="margin-top: 20px; font-size: 12px; width:72px; height:34px">Purchase</button>
                 </div>
             </div>
 
