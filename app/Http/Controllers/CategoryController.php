@@ -9,56 +9,24 @@ use App\Models\ShopCart;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserType;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoryController extends Controller
 {
     //
     public function category($id)
     {
-        $pIDs = [];
-        $cIDs = [];
-        $i = 0;
-
-        foreach(Product::all() as $products)
-        {
-            $pIDs[$i] = $products->id;
-            $cIDs[$i] = $products->category_id;
-            $i++;
-        }
-
-        $selectedpIDs = [];
-        $j = 0;
-        for($i = 0; $i<count($cIDs); $i++)
-        {
-            if ($cIDs[$i] == $id)
-            {
-                $selectedpIDs[$j] = $pIDs[$i];
-                $j++;
-            }
-        }
-
-        $products = Product::all();
-        $selectedProducts = [];
-        $k = 0;
-
-        for($i=0; $i<count($products); $i++)
-        {
-            for ($j=0; $j<count($selectedpIDs); $j++)
-            {
-                if ($selectedpIDs[$j] == $products[$i]->id)
-                {
-                    $selectedProducts[$k] = $products[$i];
-                    $k++;
-                }
-            }
-        }
-
+        $products = Product::with('categories')->where('category_id', $id)->paginate(10);
         $categories = Category::all();
         $selectedCategoryName = $categories[$id-1]->name;
 
+        // $categories = Category::all();
+        // $selectedCategoryName = $categories[$id-1]->name;
+
         return view('category')->with([
             'categoryName' => $selectedCategoryName,
-            'products'=> $selectedProducts,
+            'products'=> $products,
             'categories' =>$categories
         ]);
     }
