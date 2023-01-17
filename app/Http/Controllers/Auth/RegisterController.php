@@ -79,6 +79,6 @@ class RegisterController extends Controller
             'country' => $request['country']
         ]);
 
-        return redirect()->route('register');
+        return redirect()->route('login');
     }
 }
