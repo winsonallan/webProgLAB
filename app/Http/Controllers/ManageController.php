@@ -37,7 +37,9 @@ class ManageController extends Controller
             'image' => "/images"."/".$fileName
         ]);
 
-        return redirect('/manage/add');
+        return redirect('/manage')->with([
+            'products' => Product::all(),
+        ]);
     }
 
     public function updateView($id)
@@ -80,8 +82,17 @@ class ManageController extends Controller
         }
         $product->save();
 
-        // return redirect('/manage')->with([
-        //     'products' => Product::all(),
-        // ]);
+        return redirect('/manage')->with([
+            'products' => Product::all(),
+        ]);
+    }
+
+    public function delete ($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect('/manage')->with([
+            'products' => Product::all(),
+        ]);
     }
 }

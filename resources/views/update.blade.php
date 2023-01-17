@@ -19,7 +19,7 @@
                 <div class="card-header" style=""><b>Update Product</b></div>
 
                 <div class="card-body">
-                    <form enctype = "multipart/form-data" method="POST" action="/manage/update/{{$product[0]->id}}">
+                    <form enctype = "multipart/form-data" method="POST" action="/manage/{{$product[0]->id}}/update">
                         @method('put')
                         @csrf
 

@@ -35,12 +35,14 @@
                 </div>
             </div>
             <div style="margin-left:auto; margin-right:10px; display:flex; flex-direction:row">
-                <a href="/manage/update/{{$product->id}}">
+                <a href="/manage/{{$product->id}}/update">
                     <img src="{{asset('pencil.png') }}" alt="" srcset="" style="width: 40px; height:40px; border: 2px solid  rgb(255, 230, 0); border-radius:10px; padding:8px; margin-top: 15px; margin-right:4px">
                 </a>
-                <a href="">
+                {{-- <button style="appearance: none; border: none; background:inherit; height:fit-content" type="submit"> --}}
+                <a href="/manage/{{$product->id}}/delete">
                     <img src="{{asset('redtrash.png') }}" alt="" srcset="" style="width: 40px; height:40px;border: 2px solid red; border-radius:10px; padding:8px; margin-top: 15px">
                 </a>
+                {{-- </button> --}}
             </div>
         </div>
         @endforeach
