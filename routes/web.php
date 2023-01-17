@@ -31,21 +31,32 @@ use Illuminate\Support\Facades\Auth;
 //     return view('auth/login');
 // });
 
+// Admin Only
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/manage', [ManageController::class, 'manage'] );
+    Route::get('/manage/add', [ManageController::class, 'addView'] );
+    Route::post('manage/add', [ManageController::class, 'add']);
+    Route::get('/manage/{id}/update', [ManageController::class, 'updateView'] );
+    Route::put('/manage/{id}/update', [ManageController::class, 'update'] );
+    Route::get('/manage/{id}/delete', [ManageController::class, 'delete']);
+});
+
+
+// User Only
+Route::middleware(['auth', 'isUser'])->group(function () {
+    Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('/history', [HistoryController::class, 'history']);
+});
+
 Auth::routes();
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [UserController::class, 'profile']);
+});
+
 Route::get('/', [HomeController::class, 'home'] );
-// Route::get('/register', [HomeController::class, 'register']);
-Route::post('/register', [RegisterController::class, 'create'])->name('register');
 Route::get('/home', [HomeController::class, 'home'] );
+Route::post('/register', [RegisterController::class, 'create'])->name('register');
 Route::get('/category/{id}', [CategoryController::class, 'category'] );
 Route::get('/detail/{id}', [ProductController::class, 'pDetails'] );
 Route::get('/search', [SearchController::class, 'search'] );
-Route::get('/manage', [ManageController::class, 'manage'] );
-Route::get('/manage/add', [ManageController::class, 'addView'] );
-Route::post('manage/add', [ManageController::class, 'add']);
-Route::get('/manage/{id}/update', [ManageController::class, 'updateView'] );
-Route::put('/manage/{id}/update', [ManageController::class, 'update'] );
-Route::get('/profile', [UserController::class, 'profile']);
-Route::get('/cart', [CartController::class, 'cart']);
-Route::get('/history', [HistoryController::class, 'history']);
-Route::get('/manage/{id}/delete', [ManageController::class, 'delete']);

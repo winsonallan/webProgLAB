@@ -41,18 +41,28 @@
                                 <a href="/category/3" class="dropdown-item">Books</a>
                             </div>
                         </li>
-                        <li>
-                            <a href="{{url('manage')}}" class="nav-link">Manage Products</a>
-                        </li>
+                        @auth
+                            @if (Auth::user()->userType_id == '1')
+                                <li>
+                                    <a href="{{url('manage')}}" class="nav-link">Manage Products</a>
+                                </li>
+                            @endif
+                        @endauth
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/cart">
-                            <img src="{{asset('graySC.png')}}" alt="" style="height:20px; margin-right:8px"></a>
-                        </li>
+                        @auth
+                            @if (Auth::user()->userType_id == '2')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/cart">
+                                    <img src="{{asset('graySC.png')}}" alt="" style="height:20px; margin-right:8px"></a>
+                                </li>
+                            @endif
+                        @endauth
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
