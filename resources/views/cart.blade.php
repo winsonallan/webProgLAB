@@ -10,7 +10,7 @@
                 </div>
                 <div style="margin-left: 5px; overflow: hidden; white-space:nowrap; margin-right: 20px">
                     <div style="margin-top:15px; width: auto; font-size:24px" class="text-truncate">
-                        <b>Product Nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</b>
+                        <b>Product Name</b>
                     </div>
                     <div style="display: flex; flex-direction:row; margin-top: 5px; font-size: 16px">
                         <div style="width:100px;">Quantity</div>
