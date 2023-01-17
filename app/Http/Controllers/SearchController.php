@@ -17,12 +17,11 @@ class SearchController extends Controller
     {
         $parameters = $request->query('query', "");
         $products = Product::where('name', 'like', '%' . $parameters . '%')
-            ->orWhere('detail', 'like', '%' . $parameters . '%')
-            ->paginate(10);
+                    ->orWhere('detail', 'like', '%' . $parameters . '%')
+                    ->paginate(10);
 
         return view('search')->with([
-            'products'=>$products,
-            'search'=>true
+            'products'=>$products
         ]);
     }
 }

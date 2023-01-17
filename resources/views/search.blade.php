@@ -5,19 +5,14 @@
 <div class="container">
     {{-- Search bar --}}
     <div class="input-group mb-3 d-flex" style="flex-direction:row ">
-        @isset($search)
-            @if ($search)
-                <form action = "/search" method="GET" style="display: flex; width:100%">
-                    <input type="text" class="form-control" name="parameters" value="{{Request::query('parameters')}}">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button" style="border-radius: 0 4px 4px 0" type="submit">
-                            <img src="{{asset('whitesearch.png') }}" alt="" srcset="" style="width: 16px">
-                        </button>
-                    </div>
-                </form>
-            @endif
-        @endisset
-
+        <form action = "/search" method="GET" style="display: flex; width:100%">
+            <input type="text" class="form-control" name="parameters" value="{{Request::query('parameters')}}">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" style="border-radius: 0 4px 4px 0" type="submit">
+                    <img src="{{asset('whitesearch.png') }}" alt="" srcset="" style="width: 16px">
+                </button>
+            </div>
+        </form>
     </div>
 
     <div class="card mb-3" style="">

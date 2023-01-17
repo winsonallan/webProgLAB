@@ -25,25 +25,22 @@
                             </tr>
                             @auth
                                 @if (Auth::user()->userType_id == '2')
-                                <form action="" method="POST">
-                                    <tr>
-                                        <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
-                                        <td style="">
-                                            <input style="width:30vw; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
-                                        </td>
-                                    </tr>
-                                    </div>
-                                    @auth
-                                        @if (Auth::user()->userType_id == 2)
-                                            <button type="submit" class="btn btn-outline-secondary" style="margin-top: 20px; font-size: 12px; width:72px; height:34px">Purchase</button>
-                                        @endif
-                                    @endauth
-                                    </div>
-                                </form>
+                                <tr>
+                                    <th style="width: 100px; color:gray; vertical-align: top">Qty</th>
+                                    <td style="">
+                                        <input style="width:30vw; background-color: white; border: 1px; border-color:lightgray; border-radius:5px; border-style:solid" type="text" name="qty" id="qty">
+                                    </td>
+                                </tr>
                                 @endif
                             @endauth
                         </table>
                     </div>
+                    @auth
+                        @if (Auth::user()->userType_id == '2')
+                            <button type="button" class="btn btn-outline-secondary" style="margin-top: 20px; font-size: 12px; width:72px; height:34px">Purchase</button>
+                        @endif
+                    @endauth
+
                 </div>
             </div>
 
