@@ -44,7 +44,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
 // User Only
 Route::middleware(['auth', 'isUser'])->group(function () {
-    Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('user/{id}/cart', [CartController::class, 'cart']);
     Route::get('/history', [HistoryController::class, 'history']);
 });
 
@@ -59,4 +59,4 @@ Route::get('/home', [HomeController::class, 'home'] );
 Route::post('/register', [RegisterController::class, 'create'])->name('register');
 Route::get('/category/{id}', [CategoryController::class, 'category'] );
 Route::get('/detail/{id}', [ProductController::class, 'pDetails'] );
-Route::get('/search', [SearchController::class, 'search'] );
+Route::get('/search', [SearchController::class, 'search'] )->name('products.search');

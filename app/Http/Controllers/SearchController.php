@@ -13,8 +13,16 @@ use App\Models\UserType;
 class SearchController extends Controller
 {
     //
-    public function search()
+    public function search(Request $request)
     {
-        return view('search');
+        $parameters = $request->query('query', "");
+        $products = Product::where('name', 'like', '%' . $parameters . '%')
+            ->orWhere('detail', 'like', '%' . $parameters . '%')
+            ->paginate(10);
+
+        return view('search')->with([
+            'products'=>$products,
+            'search'=>true
+        ]);
     }
 }

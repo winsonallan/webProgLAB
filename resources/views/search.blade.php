@@ -4,13 +4,20 @@
 
 <div class="container">
     {{-- Search bar --}}
-    <div class="input-group mb-3">
-        <input type="text" class="form-control">
-        <div class="input-group-append">
-            <button class="btn btn-secondary" type="button" style="border-radius: 0 4px 4px 0">
-                <img src="{{asset('whitesearch.png') }}" alt="" srcset="" style="width: 16px">
-            </button>
-        </div>
+    <div class="input-group mb-3 d-flex" style="flex-direction:row ">
+        @isset($search)
+            @if ($search)
+                <form action = "/search" method="GET" style="display: flex; width:100%">
+                    <input type="text" class="form-control" name="parameters" value="{{Request::query('parameters')}}">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" style="border-radius: 0 4px 4px 0" type="submit">
+                            <img src="{{asset('whitesearch.png') }}" alt="" srcset="" style="width: 16px">
+                        </button>
+                    </div>
+                </form>
+            @endif
+        @endisset
+
     </div>
 
     <div class="card mb-3" style="">
@@ -19,15 +26,17 @@
                 Search Results
             </div>
         </div>
-        <div class="" style=" width:100%;flex-direction:row; display:flex; flex-wrap: wrap; justify-content: space-between">
+        <div class="" style=" width:100%;flex-direction:row; display:flex; flex-wrap: wrap;">
             {{-- Loop from here --}}
+            @foreach ($products as $product)
             <div class="card card-body mt-2 mb-2" style="min-width: 18%; max-width:15%; margin-left:8px; margin-right:8px">
                 <div class="text-truncate" style="">
-                    <img src="{{asset('sampleImage.jpg') }}" alt="" srcset="" style="min-width: 100%; max-width:100%; min-height:75%; max-height:75%">
-                    <p class="text-truncate">Item NameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeeeNameeeeeeeeeeeeee</p>
-                    <p class="text-truncate"><b>IDR [Price goes here]</b></p>
+                    <img src="{{$product->image }}" alt="" srcset="" style="min-width: 100%; max-width:100%;">
+                    <p class="text-truncate">{{$product->name}}</p>
+                    <p class="text-truncate"><b>IDR {{$product->price}}</b></p>
                 </div>
             </div>
+            @endforeach
             {{-- To here --}}
         </div>
     </div>
